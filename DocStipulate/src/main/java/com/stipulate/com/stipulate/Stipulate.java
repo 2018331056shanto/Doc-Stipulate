@@ -7,7 +7,7 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.hibernate.User;
+import com.Entity.User;
 
 @SpringBootApplication
 public class Stipulate {
@@ -15,7 +15,7 @@ public class Stipulate {
 		
 		SpringApplication.run(Stipulate.class, args);
 		User user=new User();
-		user.setId(11);
+		user.setId(112);
 		user.setName("Shanto");
 		user.setUserName("Shanto2018331056");
 		Configuration cfg=new Configuration().configure("hibernate.cfg.xml");
