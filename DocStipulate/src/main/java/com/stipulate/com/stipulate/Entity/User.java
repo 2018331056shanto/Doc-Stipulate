@@ -1,5 +1,4 @@
-package com.Entity;
-
+package com.stipulate.Entity;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
