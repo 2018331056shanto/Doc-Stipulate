@@ -22,6 +22,11 @@ public User findByEmail(String email) {
 	
 	return repo.findByEmail(email);
 }
+public boolean bcryptPasswordDecoder(String password,String encodedPassword) {
+	
+	boolean match=bcryptPasswordEncoder.bcryptPasswordDecoder(password, encodedPassword);
+	return match;
+}
 
 @Transactional
 public void save(User user) {

@@ -146,7 +146,7 @@ padding: 5px;
 </div>
 
 <div class="form-container">
- <form:form class="form-container" action="/login" method="POST">
+ <form:form class="form-container" action="/ulogin" modelAttribute="login" method="POST">
  <div class="error">${error}</div>
 <div class="input">
 <label for="email" class="label"> Enter your Email</label>

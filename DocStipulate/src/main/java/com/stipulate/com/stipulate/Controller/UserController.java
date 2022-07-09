@@ -17,6 +17,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,17 +29,68 @@ public class UserController  {
 	@Autowired
 	UserService userService;
 	
+	@GetMapping("/home")
+	public ModelAndView home() {
+		
+		ModelAndView modelAndView=new ModelAndView("Home/UserHome");
+		return modelAndView;
+	}
+	
+	
 	@GetMapping(value="")
 	public ModelAndView login() {
 		
 		return new ModelAndView("user/Login");
 	}
-	@PostMapping(value="/login")
-	public ModelAndView login(Model model) {
-		
+	@PostMapping(value="/ulogin")
+	public ModelAndView login(@ModelAttribute("login")@RequestParam("email") String email,@RequestParam("password") String password)
+	{
 		ModelAndView modelAndView=new ModelAndView();
+		System.out.println(email);
+		System.out.println(password);
+		try {
+			
+			if(foundDuplicateEmail(email))
+			{
+				if(isVerified(email))
+				{
+					if(isPasswordMatch(email,password))
+					{
+						return new ModelAndView("redirect:/home");
+					}
+					else
+					{
+						modelAndView.addObject("error","Email or Password Do not Match");
+						modelAndView.setViewName("user/Login");
+						return modelAndView;
+					}
+					
+				}
+				else {
+					modelAndView.addObject("error","This Account is not Verified");
+					modelAndView.setViewName("user/Login");
+					return modelAndView;
+				}
+				
+			}
+			else
+			{
+				modelAndView.addObject("error","This Account is not Exists");
+				modelAndView.setViewName("user/Login");
+				return modelAndView;
+				
+			}
+			
+			
 		
-		return modelAndView;
+		}
+		catch(Exception excep) {
+			
+			modelAndView.setViewName("user/Login");
+			modelAndView.addObject("error","Something went wrong");
+			return modelAndView;
+		}
+		
 	}
 	
 	@GetMapping(value = "/register")
@@ -117,6 +169,20 @@ private boolean foundDuplicateEmail(String email) {
 	System.out.println("found duplicateEmail()");
 	System.out.println(Objects.nonNull(duplicateUser));
 	return Objects.nonNull(duplicateUser);
+}
+
+private boolean isVerified(String email)
+{
+	User user=userService.findByEmail(email);
+	return user.isVerified();
+}
+
+private boolean isPasswordMatch(String email,String password) {
+	User user=userService.findByEmail(email);
+	
+	boolean match=userService.bcryptPasswordDecoder(password, user.getPassword());
+	return match;
+	
 }
 
 
