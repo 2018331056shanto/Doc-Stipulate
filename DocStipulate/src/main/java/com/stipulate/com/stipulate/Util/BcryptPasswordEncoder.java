@@ -13,6 +13,13 @@ public class BcryptPasswordEncoder {
 		return hashPassword;
 		
 	}
+public boolean bcryptPasswordDecoder(String password,String encodedPassword) {
+		
+		BCryptPasswordEncoder bCryptPassword=new BCryptPasswordEncoder();
+		
+		return bCryptPassword.matches(password, encodedPassword);
+		
+	}
 	
 	
 }

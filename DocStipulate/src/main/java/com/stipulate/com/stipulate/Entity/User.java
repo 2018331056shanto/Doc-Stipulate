@@ -47,8 +47,17 @@ public class User {
 	private String password;
 	@NotBlank
 	private String profilePic;
+	
+
+	private boolean verified=true;
 	public Long getId() {
 		return userId;
+	}
+	public boolean isVerified() {
+		return verified;
+	}
+	public void setVerified(boolean verified) {
+		this.verified = verified;
 	}
 	public void setId(Long id) {
 		this.userId = id;
