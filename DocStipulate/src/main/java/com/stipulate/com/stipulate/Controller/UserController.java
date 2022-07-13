@@ -1,7 +1,9 @@
 package com.stipulate.Controller;
 
+import java.sql.Timestamp;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -20,14 +22,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.stipulate.Entity.User;
+import com.stipulate.Entity.Verification;
+import com.stipulate.Service.MailSenderService;
 import com.stipulate.Service.UserService;
 
 @RestController
 public class UserController  {
 	@Autowired
-	UserService userService;
+	private UserService userService;
+	@Autowired
+	private MailSenderService mailSenderService;
 	
 	@GetMapping("/home")
 	public ModelAndView home() {
@@ -100,7 +107,7 @@ public class UserController  {
 		return mv;
 	}
 	@PostMapping(value="/register")
-	public ModelAndView register(@Validated @ModelAttribute("register") User user,BindingResult bindingResult,ModelMap modelMap) {
+	public ModelAndView register(@Validated @ModelAttribute("register") User user,BindingResult bindingResult,ModelMap modelMap,RedirectAttributes redirectAttributes) {
 		System.out.println(user.getEmail());
 		ModelAndView modelAndView=new ModelAndView();
 		try {
@@ -130,8 +137,20 @@ public class UserController  {
 			else
 			{
 				userService.save(user);
-				System.out.println("hello i am error");
-				return new ModelAndView("redirect:/");
+				
+				Random rnd = new Random();
+				int number= rnd. nextInt(999999);
+				String token=String.valueOf(number);
+				Verification verification=new Verification();
+				verification.setEmail(user.getEmail());
+				Timestamp timestamp=new Timestamp(11222);
+				verification.setToken(token);
+				verification.setCreatedAt(timestamp);
+				
+				redirectAttributes.addFlashAttribute("verification",verification);
+				System.out.println("i am from whome11!!");
+				mailSenderService.sendEmail(user.getEmail(), token);
+				return new ModelAndView("redirect:/verifyaccount");
 			}
 			
 			
