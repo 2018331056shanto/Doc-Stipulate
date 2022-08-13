@@ -24,8 +24,25 @@ background-color: white;
 	background-color: #F0EBE3;
 	box-shadow: 2px 3px 5px 1px rgb(78, 78, 78);
 }
-  .text-container{
-  margin-top:20px;
+.img-container{
+	margin-top:20px;
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+.doctor-img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
+img {
+	height: 100%;
+	width: 100%;
+	objec-fit:cover;
+	border-radius: 50px;
+}
+.text-container{
+  margin-top:10px;
     display:flex;
     justify-content:center;
     width:100%;
@@ -50,7 +67,7 @@ background-color: white;
     background-color: transparent;
     margin-right: 10px;
     }
-  
+    
     .form-container{
     display: flex;
     margin:10px;
@@ -110,16 +127,11 @@ padding: 5px;
     background-color: transparent;
 }
 
-/* .link-box:hover{
-	background-color: #003865;
-}
-.link:hover{
-	color:white;
-} */
+
 .line:hover{
 	color:white;
 }
-*{
+  *{
 	margin:0px;	
 }
 .top-container{
@@ -184,12 +196,10 @@ img{
 	height:10px;
 	color:#D4F6CC;
 }
-
-
+  
 </style>
 </head>
-<body >
-
+<body>
 <nav class="navbar">
 <div class="register-box">
 <div class="img">
@@ -227,13 +237,19 @@ img{
 </div> 
 <div class="container">
 <div class="register-container">
+<div class="img-container">
+<div class="doctor-img">
+<img  src="../../images/doctor.jpg"/>
+</div>
+</div>
 <div class="text-container">
 <div class="text">
-Create New Account as User
+Register as Doctor..
 </div>
 </div>
+
 <div class="form-container">
- <form:form class="form-container" action="/register" modelAttribute="register" method="POST">
+ <form:form class="form-container" action="/register/doctor" modelAttribute="registerDoctor" method="POST">
  <div class="input">
  <label class="label" for="fname">First Name</label>
  <div class="error">${fName}</div>
@@ -251,9 +267,9 @@ Create New Account as User
 <input id="email" placeholder="Enter email" name="email" class="input-box" type="email"  onfocus="true"/>
 </div>
 <div class="input">
-<label for="username" class="label">Enter Username</label>
- <div class="error">${userName}</div>
- <input name="userName" placeholder="Username" id="username" class="input-box" type="text"  onfocus="true"/>
+<label for="lisence" class="label">Enter Lisence Number</label>
+ <div class="error">${lisence}</div>
+ <input name="lisenceNumber.lisence" placeholder="Lisence Number" id="lisence" class="input-box" type="text"  onfocus="true"/>
 </div>
 <div class="input">
 <label for="password" class="label">Enter Password</label>
@@ -262,15 +278,16 @@ Create New Account as User
 
 </div>
 <div class="input">
-<label for="profile" class="label"> Enter Profile Picture</label>
- <div class="error">${profilePic}</div>
-<input class="input-box" name="profilePic" id="profile" placeholder="Enter picture"  type="file"  onfocus="true"/>
+<label for="profile" class="label">Enter Registered Document</label>
+ <div class="error">${lisenceFile}</div>
+<input class="input-box" name="lisenceFile" id="profile" placeholder="Enter File"  type="file"  onfocus="true"/>
 </div>
 <div class="input">
 <input class="input-box text submit"  type="submit"/>
 </div>
 </form:form> 
 </div>
+
 </div>
 </div>
 </body>

@@ -164,6 +164,9 @@ padding: 5px;
 <input class="input-box text submit"  type="submit"/>
 </div>
 </form:form> 
+<div>
+<a href="/register">Don't have account?</a>
+</div>
 </div>
 </div>
 </div>

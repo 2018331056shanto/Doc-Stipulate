@@ -25,7 +25,9 @@ public class VerificationController {
 		
 		System.out.println("hello hi");
 		verificationService.save(verification);
-		ModelAndView modelAndView=new ModelAndView("user/Verification");
+		ModelAndView modelAndView=new ModelAndView();
+		modelAndView.addObject("email",verification.getEmail());
+		modelAndView.setViewName("user/Verification");
 		
 		return modelAndView;
 	}

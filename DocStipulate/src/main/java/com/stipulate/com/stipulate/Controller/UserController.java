@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.stipulate.Entity.DoctorRegistration;
 import com.stipulate.Entity.User;
 import com.stipulate.Entity.Verification;
 import com.stipulate.Service.MailSenderService;
@@ -33,8 +34,8 @@ import com.stipulate.Service.UserService;
 public class UserController  {
 	@Autowired
 	private UserService userService;
-	@Autowired
-	private MailSenderService mailSenderService;
+//	@Autowired
+//	private MailSenderService mailSenderService;
 	
 	@GetMapping("/home")
 	public ModelAndView home() {
@@ -42,7 +43,6 @@ public class UserController  {
 		ModelAndView modelAndView=new ModelAndView("Home/UserHome");
 		return modelAndView;
 	}
-	
 	
 	@GetMapping(value="")
 	public ModelAndView login() {
@@ -149,13 +149,14 @@ public class UserController  {
 				
 				redirectAttributes.addFlashAttribute("verification",verification);
 				System.out.println("i am from whome11!!");
-				mailSenderService.sendEmail(user.getEmail(), token);
+//				mailSenderService.sendEmail(user.getEmail(), token);
 				return new ModelAndView("redirect:/verifyaccount");
 			}
 			
 			
 		}
 		catch(Exception exception) {
+			System.out.println(exception.getMessage());
 			System.out.println("i am from catch");
 			 modelAndView.setViewName("user/Register");
 			return modelAndView;
@@ -163,6 +164,7 @@ public class UserController  {
 		
 		
 	}
+	
 	
 @PostConstruct
 public void helloBro()
