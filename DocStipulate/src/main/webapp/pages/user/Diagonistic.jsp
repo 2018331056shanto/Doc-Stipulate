@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
@@ -75,7 +76,7 @@ img{
 </style>
 </head>
 <body>
-
+<!-- 
 <nav class="navbar">
 <div class="register-box">
 <div class="img">
@@ -106,7 +107,8 @@ img{
 </div>
 <div class="about">
 </div>
-</nav>
+</nav> -->
+<%@ include file="../../decorators/Navbar.jsp" %>
  <div class="top-container">
 
 

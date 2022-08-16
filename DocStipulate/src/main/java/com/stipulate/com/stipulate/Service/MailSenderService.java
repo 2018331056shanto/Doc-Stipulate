@@ -12,6 +12,7 @@ public class MailSenderService {
 	
 	public void sendEmail(String toEmail,String token)
 	{
+		System.out.println(toEmail);
 		SimpleMailMessage message=new SimpleMailMessage();
 		message.setFrom("ashraful185058@gmail.com");
 		message.setTo(toEmail);

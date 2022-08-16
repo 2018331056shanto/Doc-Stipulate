@@ -261,11 +261,7 @@ Create New Account as User
 <input name="password" class="input-box" placeholder="Enter Password" id="password" type="password"  onfocus="true"/>
 
 </div>
-<div class="input">
-<label for="profile" class="label"> Enter Profile Picture</label>
- <div class="error">${profilePic}</div>
-<input class="input-box" name="profilePic" id="profile" placeholder="Enter picture"  type="file"  onfocus="true"/>
-</div>
+
 <div class="input">
 <input class="input-box text submit"  type="submit"/>
 </div>

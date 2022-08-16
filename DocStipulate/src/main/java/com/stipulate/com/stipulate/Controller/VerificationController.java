@@ -11,20 +11,24 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.stipulate.Entity.Verification;
+import com.stipulate.Service.MailSenderService;
 import com.stipulate.Service.VerificationService;
 
 @RestController
 public class VerificationController {
 	@Autowired
 	private VerificationService verificationService;
+	@Autowired
+	private MailSenderService mailSenderService;
 	
 	@GetMapping(value="/verifyaccount")
 	public ModelAndView verify(@Validated @ModelAttribute("verification") Verification verification, BindingResult bindingResult,ModelMap modelMap ) {
-		System.out.println(verification.getEmail());
-		System.out.println(verification.getToken());
+//		System.out.println("it verification email"+verification.getEmail());
+//		System.out.println(verification.getToken());
 		
-		System.out.println("hello hi");
+//		System.out.println("hello hi");
 		verificationService.save(verification);
+		mailSenderService.sendEmail(verification.getEmail(),verification.getToken());
 		ModelAndView modelAndView=new ModelAndView();
 		modelAndView.addObject("email",verification.getEmail());
 		modelAndView.setViewName("user/Verification");
