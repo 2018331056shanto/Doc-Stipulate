@@ -7,9 +7,17 @@ import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.GenericGenerator;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonFormatTypes;
 
 @Entity
 @Table(name = "doctor")
@@ -17,6 +25,8 @@ public class DoctorRegistration {
 	
 	@EmbeddedId
 	@NotBlank
+//	@GeneratedValue(generator ="uuid2")
+//	@GenericGenerator(name = "uuid2",strategy = "org.hibernate.id.UUIDGenerator")
 	private LisenceNumberID lisenceNumber;
 //	@Embedded
 //	private RegistrationInfo registrationInfo;
@@ -32,7 +42,7 @@ public class DoctorRegistration {
 	@NotBlank
 	@Column(unique = true)
 	private String email;
-	
+//	@JsonFormat(shape = JsonFormat.Shape.STRING)
 	@Column(name="lisenceFile",unique = true)
 	private File lisenceFile;
 	private Boolean status=false;

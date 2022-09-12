@@ -1,114 +1,90 @@
 package com.stipulate.Entity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="user_table",
+@Table(name="user",
 uniqueConstraints = @UniqueConstraint(
-		columnNames = {"email","user_name"}
+		columnNames = {"email"}
 		)
 
 )
-//@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"user_Name"})})
 public class User {
-	@Id
-	@SequenceGenerator(name = "user_sequence",
-	sequenceName = "user_sequenc",
-	allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
-	generator = "user_sequence")
 	
-	private Long userId;
-	@Size(min = 5, max = 20)
+	@Id
+	private String id;
+	
 	@NotBlank
-	private String fName;
-	@Size(min=5, max=20)
-	@NotBlank
-	private String lName;
+	@Column(unique = true)
+	private String username;
+	
 	@Email
+	@Column(unique = true)
 	@NotBlank
 	private String email;
 	
-	@NotBlank
-	@Size(min =7,max=20)
-	@Column(name="user_name")
-	private String userName;
-	@Size(min =8,max=100)
+	private String role;
 	@NotBlank
 	private String password;
-	@NotBlank
-	private String profilePic;
-	
 
-	private boolean verified=true;
-	public Long getId() {
-		return userId;
+	public String getId() {
+		return id;
 	}
-	public boolean isVerified() {
-		return verified;
+
+	public void setId(String id) {
+		this.id = id;
 	}
-	public void setVerified(boolean verified) {
-		this.verified = verified;
+
+	public String getUsername() {
+		return username;
 	}
-	public void setId(Long id) {
-		this.userId = id;
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
-	public String getfName() {
-		return fName;
-	}
-	public void setfName(String fName) {
-		this.fName = fName;
-	}
-	public String getlName() {
-		return lName;
-	}
-	public void setlName(String lName) {
-		this.lName = lName;
-	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getUserName() {
-		return userName;
+
+	public String getRole() {
+		return role;
 	}
-	public void setUserName(String userName) {
-		this.userName = userName;
+
+	public void setRole(String role) {
+		this.role = role;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getProfilePic() {
-		return profilePic;
+
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
-	public void setProfilePic(String profilePic) {
-		this.profilePic = profilePic;
-	}
+
 	@Override
 	public String toString() {
-		return "User [id=" + userId + ", fName=" + fName + ", lName=" + lName + ", email=" + email + ", userName="
-				+ userName + ", password=" + password + ", profilePic=" + profilePic + "]";
+		return "User [id=" + id + ", username=" + username + ", email=" + email + ", role=" + role + ", password="
+				+ password + "]";
 	}
-	public User() {
-		
-	}
-	
-	
-	
 
+	
+	
 }
 

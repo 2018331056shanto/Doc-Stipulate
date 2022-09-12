@@ -1,10 +1,9 @@
 package com.stipulate.Repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import com.stipulate.Entity.Verification;
+import com.stipulate.Repository.GenericRepo.EntitySaveGenRepo;
 
-public interface VerificationRepo extends JpaRepository<Verification, String> {
+public interface VerificationRepo extends EntitySaveGenRepo<Verification> {
 	
 
 }

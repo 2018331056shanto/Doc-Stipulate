@@ -10,14 +10,15 @@ public class MailSenderService {
 	@Autowired
 	private JavaMailSender mailsender;
 	
-	public void sendEmail(String toEmail,String token)
+	public <T> void sendEmail(T element,String token)
 	{
-		System.out.println(toEmail);
+		System.out.println(element);
 		SimpleMailMessage message=new SimpleMailMessage();
 		message.setFrom("ashraful185058@gmail.com");
-		message.setTo(toEmail);
+		message.setTo(element.toString());
 		message.setSubject("Account Verification");
 		message.setText("Here is the code to verify your account :"+token);
+		System.out.println(message.getTo());
 		mailsender.send(message);
 	}
 	

@@ -26,6 +26,7 @@
 	   margin-top:3px;
 }
 .doc-stipulate{
+	
 	display:flex;
 	width:30%;
 	height:70px;

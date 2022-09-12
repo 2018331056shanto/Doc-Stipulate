@@ -1,5 +1,8 @@
 package com.stipulate.Service;
 
+import java.sql.Timestamp;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,11 +15,29 @@ public class VerificationService {
 
 	@Autowired
 	private VerificationRepo verificationRepo;
+	@Autowired
+	private MailSenderService mailSenderService;
 	
+	Verification verification=new Verification();
+	
+	
+
 	@Transactional
-	public void save(Verification verification) {
+	public <T> void save(T element) {
 		
-		verificationRepo.save(verification);
+	System.out.println(element);
+	Random rnd = new Random();
+	int number= rnd. nextInt(999999);
+	String token=String.valueOf(number);
+	Timestamp timestamp=new Timestamp(11222);
+	verification.setEmail(element);
+	verification.setToken(token);
+	verification.setCreatedAt(timestamp);
+	verificationRepo.save(verification);	
+//	redirectAttributes.addFlashAttribute("verification",verification);
+//	System.out.println("i am from whome11!!");
+	mailSenderService.sendEmail(element, token);
+		
 	}
 
 }

@@ -7,8 +7,9 @@
 <meta charset="UTF-8">
 <title>Login</title>
 <style>
-.container{
+.container1{
 	display: flex;
+	flex-direction:column;
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
@@ -33,14 +34,22 @@ margin-top:20px;
 	align-items: center;
 	
 }
-img{
+.img1{
 	
 	
 	width: 150px;
 	height:150px;
 	border-radius:75px;
 	object-fit:contain;
+	background-color: green;
 
+	
+}
+img{
+	width: 100%;
+	height: 100%;
+	object-fit:contain;
+	border-radius:75px;
 	
 }
 .text-container{
@@ -132,10 +141,12 @@ padding: 5px;
 </style>
 </head>
 <body>
-<div class="container">
+<%@ include file="../../decorators/Navbar.jsp" %>
+<div class="container1">
+
 <div class="login-container">
 <div class="img-container">
-<div class="img">
+<div class="img1">
 <img src="../images/demoProfile.png"/>
 </div>
 </div>

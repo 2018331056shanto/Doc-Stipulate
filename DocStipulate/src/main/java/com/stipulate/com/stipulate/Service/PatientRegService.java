@@ -5,22 +5,24 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.stipulate.Entity.User;
-import com.stipulate.Repository.UserRepo;
+import com.stipulate.Entity.Patient;
+import com.stipulate.Repository.PatientRepo;
 
 @Service
-public class UserService {
+public class PatientRegService   {
 
 	@Autowired
-	private UserRepo userRepo;
+	private PatientRepo patientRepo;
 	
+
 	@Transactional
-	public void saveUser(User user) {
+	public void savePatient(Patient patient) {
+
+		patientRepo.save(patient);
 		
-		userRepo.save(user);
+	
+	
 	}
+	
 
 }
-	
-
-

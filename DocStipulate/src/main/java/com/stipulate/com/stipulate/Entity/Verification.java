@@ -44,8 +44,8 @@ public class Verification {
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public <T> void setEmail(T element) {
+		this.email = (String) element;
 	}
 	public String getToken() {
 		return token;

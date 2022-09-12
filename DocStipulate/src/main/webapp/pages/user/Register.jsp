@@ -14,6 +14,7 @@ justify-content: center;
 flex-wrap: wrap;
 background-color: white;
 }
+
 .register-container{
 	
 	margin-top:50px;
@@ -184,6 +185,9 @@ img{
 	height:10px;
 	color:#D4F6CC;
 }
+.hide{
+	visibility:hidden;
+}
 
 
 </style>
@@ -236,13 +240,13 @@ Create New Account as User
  <form:form class="form-container" action="/register" modelAttribute="register" method="POST">
  <div class="input">
  <label class="label" for="fname">First Name</label>
- <div class="error">${fName}</div>
- <input name="fName" type="text" class="input-box" id="fname" placeholder="First Name"  onfocus="true"/>
+ <div class="error">${fname}</div>
+ <input name="fname" type="text" class="input-box" id="fname" placeholder="First Name"  onfocus="true"/>
  </div>
  <div class="input">
  <label class="label" for="lname">Last Name</label>
-  <div class="error">${lName}</div>
- 	<input class="input-box" id="lname" placeholder="Last Name" name="lName" type="text"  onfocus="true"/>
+  <div class="error">${lname}</div>
+ 	<input class="input-box" id="lname" placeholder="Last Name" name="lname" type="text"  onfocus="true"/>
 
  </div>
 <div class="input">
@@ -252,8 +256,8 @@ Create New Account as User
 </div>
 <div class="input">
 <label for="username" class="label">Enter Username</label>
- <div class="error">${userName}</div>
- <input name="userName" placeholder="Username" id="username" class="input-box" type="text"  onfocus="true"/>
+ <div class="error">${username}</div>
+ <input name="username" placeholder="Username" id="username" class="input-box" type="text"  onfocus="true"/>
 </div>
 <div class="input">
 <label for="password" class="label">Enter Password</label>
@@ -261,10 +265,14 @@ Create New Account as User
 <input name="password" class="input-box" placeholder="Enter Password" id="password" type="password"  onfocus="true"/>
 
 </div>
+<div class="hide">
+<input name="role" type="text" value="user"/>
+</div>
 
 <div class="input">
 <input class="input-box text submit"  type="submit"/>
 </div>
+
 </form:form> 
 </div>
 </div>
