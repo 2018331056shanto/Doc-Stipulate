@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Doc-Stipulate" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="src.main.java.com.stipulate.com.stipulate.Stipulate.java" />
+    <module name="Doc-Stipulate" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

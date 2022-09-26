@@ -4,16 +4,114 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="782a61cb-ab01-4be9-8b4a-9d61efbd75de" name="Changes" comment="" />
+    <list default="true" id="782a61cb-ab01-4be9-8b4a-9d61efbd75de" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/Doc-Stipulate.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/runConfigurations/Doc_Stipulate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/AOP/Annotation/Hash.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/AOP/Bcrypt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Controller/DoctorRegisterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Controller/HomePageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Controller/PatientRegController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Controller/SignupController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Controller/VerificationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Entity/DiagnosticRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Entity/DoctorRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Entity/LisenceNumberID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Entity/Patient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Entity/RegistrationInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Entity/Verification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Repository/DoctorRegisterRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Repository/GenericRepo/EntitySaveGenRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Repository/PatientRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Repository/UserRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Repository/VerificationRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Repository/VerifyMultipleRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Service/BoundResultService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Service/DoctorRegisterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Service/MailSenderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Service/PatientRegService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Service/VerificationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Service/VerifyMultpleAttributeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Stipulate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/stipulate/Util/BcryptPasswordEncoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/decorators/Navbar.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/about.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/background.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/demoProfile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/diagnostic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/doctor.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/doctor.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/healthRecord.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/healthrecord.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/Home/HomePage.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/Home/UserHome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/extra/Verify.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/Diagonistic.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/DoctorRegister.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/Login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/Register.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/Verification.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/AOP/Annotation/Hash.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/AOP/Bcrypt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Configuration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Controller/DoctorRegisterController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Controller/HomePageController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Controller/PatientRegController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Controller/SignupController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Controller/VerificationController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Entity/DiagnosticRegistration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Entity/DoctorRegistration.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Entity/LisenceNumberID.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Entity/Patient.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Entity/RegistrationInfo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Entity/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Entity/Verification.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Repository/DoctorRegisterRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Repository/GenericRepo/EntitySaveGenRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Repository/PatientRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Repository/UserRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Repository/VerificationRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Repository/VerifyMultipleRepo.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Service/BoundResultService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Service/DoctorRegisterService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Service/MailSenderService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Service/PatientRegService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Service/UserService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Service/VerificationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Service/VerifyMultpleAttributeService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Stipulate.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/stipulate/Util/BcryptPasswordEncoder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FJ40KF1xbsOJIrqKG1mlxoicO2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -22,7 +120,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/shanto/IdeaProjects/DocStipulate/src/main/java/com/stipulate/Repository",
+    "last_opened_file_path": "/media/shanto/Others/Doc-Stipulate/DocStipulate",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -70,5 +168,19 @@
       <updated>1664196631592</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
 </project>
