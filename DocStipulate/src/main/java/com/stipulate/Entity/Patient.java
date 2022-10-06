@@ -2,14 +2,8 @@ package com.stipulate.Entity;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.GenericGenerator;
 @Entity
@@ -25,12 +19,15 @@ public class Patient {
 	private String lname;
 	
 	private Date dob;
-	
-	@OneToOne
-	@JoinColumn(name="FK_userid",referencedColumnName = "id")
+
+	@OneToOne(cascade = CascadeType.ALL, optional = false, orphanRemoval = true)
+	@JoinColumn(name = "user_id", nullable = false, unique = true)
 	private User user;
 
-	
+
+
+
+
 	public String getId() {
 		return id;
 	}

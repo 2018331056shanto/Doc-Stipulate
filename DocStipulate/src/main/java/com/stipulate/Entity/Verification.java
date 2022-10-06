@@ -27,8 +27,7 @@ import org.springframework.boot.context.properties.bind.DefaultValue;
 public class Verification {
 	
 	 @Id
-	 @GeneratedValue(strategy = GenerationType.IDENTITY)
-	  private long id;
+	  private String id;
 	@NotBlank
 	private String email;
 	@Column(name="token")
@@ -59,8 +58,13 @@ public class Verification {
 	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
-	
-	
-	
 
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
 }
+

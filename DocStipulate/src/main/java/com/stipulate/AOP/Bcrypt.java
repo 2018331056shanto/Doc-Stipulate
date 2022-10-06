@@ -35,6 +35,8 @@ public class Bcrypt {
 			Patient patient=(Patient) objectArgs[2];
 //			patient.setId(uuid.toString());
 			patient.setUser(user);
+			UUID uuid1=UUID.randomUUID();
+			patient.setId(uuid1.toString());
 			user.setPassword(bcryptPasswordEncoder.bcryptPasswordEncoder(user.getPassword()));
 			user.setRole(bcryptPasswordEncoder.bcryptPasswordEncoder(user.getRole()));
 //			System.out.println(user.getPassword());
