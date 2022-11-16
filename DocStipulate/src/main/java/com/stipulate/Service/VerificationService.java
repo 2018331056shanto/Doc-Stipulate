@@ -1,12 +1,9 @@
 package com.stipulate.Service;
 
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.Random;
 import java.util.UUID;
 
-import com.stipulate.Entity.User;
-import org.hibernate.query.criteria.internal.expression.function.CurrentTimestampFunction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
