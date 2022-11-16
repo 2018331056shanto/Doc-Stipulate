@@ -8,20 +8,22 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "diagonistic")
+@Table(name = "diagnostic")
 public class DiagnosticRegistration {
 	
 	@EmbeddedId
-	@NotBlank
+	@NotNull
 	private LisenceNumberID lisenceNumber;
-	@NotBlank
+	@NotNull
 	private String name;
-	@NotBlank
+	@NotNull
 	private String location;
 	@Email
-	@NotBlank
+	@NotNull
+	@Column(unique = true)
 	private String email;
 	@Column(name="lisenceFile",unique = true)
 	private File lisenceFile;

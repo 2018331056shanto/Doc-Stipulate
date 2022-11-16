@@ -18,6 +18,13 @@ public class UserService {
 	public void saveUser(User user) {
 		
 		userRepo.save(user);
+
+	}
+	@Transactional
+	public void updateStatus(String email)
+	{
+		boolean status=true;
+		userRepo.updateStatus(status,email);
 	}
 
 }

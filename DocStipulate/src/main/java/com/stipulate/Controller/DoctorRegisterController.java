@@ -36,8 +36,8 @@ public class DoctorRegisterController {
 	public ModelAndView registerDoctor(@Validated @ModelAttribute("registerDoctor")DoctorRegistration doctorRegistration, BindingResult bindingResult,ModelMap modelMap) {
 		
 		ModelAndView modelAndView=new ModelAndView();
-		System.out.println(doctorRegistration.getLisenceNumber());
-		System.out.println(doctorRegistration.getEmail());
+//		System.out.println(doctorRegistration.getLisenceNumber());
+//		System.out.println(doctorRegistration.getEmail());
 		try {
 			if(bindingResult.hasErrors()) {
 				List<FieldError> list=bindingResult.getFieldErrors();
@@ -46,7 +46,7 @@ public class DoctorRegisterController {
 					System.out.println(fieldError.getField());
 					System.out.println(fieldError.getDefaultMessage());
 				}
-				System.out.println("i dont know what to do");
+//				System.out.println("i dont know what to do");
 				 modelAndView.setViewName("user/DoctorRegister");
 				 return modelAndView;
 			}

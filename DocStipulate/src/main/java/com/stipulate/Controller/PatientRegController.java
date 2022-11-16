@@ -75,9 +75,12 @@ public  class PatientRegController {
 			{
 				
 				userService.saveUser(user);
+				System.out.println(patient);
 				patientRegService.savePatient(patient);
 				verificationService.save(user.getEmail());
-						
+
+				redirectAttributes.addFlashAttribute("email",user.getEmail());
+				redirectAttributes.addAttribute("email",user.getEmail());
 				return new ModelAndView("redirect:/verifyaccount");
 			}
 		
